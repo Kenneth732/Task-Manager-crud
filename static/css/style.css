@@ -8,3 +8,12 @@ body {
     text-align: center;
   }
   
+  form {
+    margin-bottom: 20px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  

@@ -126,3 +126,21 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
       .catch(error => console.error(error));
   };
   
+  // Function to handle the completion request
+  const handleCompleteRequest = (taskId) => {
+    fetch(`http://localhost:3000/tasksData/${taskId}`)
+      .then((res) => res.json())
+      .then((task) => {
+        const updatedTask = {
+          title: task.title,
+          description: task.description,
+          dueDate: task.dueDate,
+          completed: !task.completed
+        };
+  
+
+  };
+  
+  // Call the handleRenderFetch function initially to display the tasks
+  handleRenderFetch();
+  

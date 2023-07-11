@@ -86,6 +86,15 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
       },
       body: JSON.stringify(task)
     })
-
+      .then(() => {
+        // Reset the form fields
+        document.querySelector('#titleInput').value = '';
+        document.querySelector('#descriptionInput').value = '';
+        document.querySelector('#dueDateInput').value = '';
+  
+        // Refresh the task list by re-rendering the data
+        handleRenderFetch();
+      })
+      .catch(error => console.error(error));
   };
   

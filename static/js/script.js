@@ -19,3 +19,13 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
     handlePostRequest(newTask);
   });
   
+  // Function to handle rendering the fetched data
+  const handleDisplay = (data) => {
+    const taskList = document.querySelector('#task-list');
+  
+    // Clear any existing content
+    taskList.innerHTML = '';
+  
+
+  };
+  

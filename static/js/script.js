@@ -110,3 +110,19 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
       .catch(error => console.error(error));
   };
   
+  // Function to handle the PATCH request
+  const handleEditRequest = (taskId, updatedTask) => {
+    fetch(`http://localhost:3000/tasksData/${taskId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updatedTask)
+    })
+      .then(() => {
+        // Refresh the task list by re-rendering the data
+        handleRenderFetch();
+      })
+      .catch(error => console.error(error));
+  };
+  

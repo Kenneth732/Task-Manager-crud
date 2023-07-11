@@ -98,3 +98,15 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
       .catch(error => console.error(error));
   };
   
+  // Function to handle the DELETE request
+  const handleDeleteRequest = (taskId) => {
+    fetch(`http://localhost:3000/tasksData/${taskId}`, {
+      method: 'DELETE'
+    })
+      .then(() => {
+        // Refresh the task list by re-rendering the data
+        handleRenderFetch();
+      })
+      .catch(error => console.error(error));
+  };
+  

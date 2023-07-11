@@ -69,3 +69,12 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
     });
   };
   
+  // Function to handle fetching and rendering the data
+  const handleRenderFetch = () => {
+    fetch('http://localhost:3000/tasksData')
+      .then(res => res.json())
+      .then(data => handleDisplay(data))
+      .catch(error => console.error(error));
+  };
+  
+ 

@@ -40,7 +40,13 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
         <button class="deleteBtn" data-id="${task.id}">Delete</button>
       `;
   
+      const deleteButton = taskItem.querySelector('.deleteBtn');
+      const editButton = taskItem.querySelector('.editBtn');
+      const completeBtn = taskItem.querySelector('.completeBtn');
+  
 
+  
+      taskList.appendChild(taskItem);
     });
   };
   

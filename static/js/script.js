@@ -44,7 +44,26 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
       const editButton = taskItem.querySelector('.editBtn');
       const completeBtn = taskItem.querySelector('.completeBtn');
   
-
+      deleteButton.addEventListener('click', () => {
+        const taskId = deleteButton.dataset.id;
+        handleDeleteRequest(taskId);
+      });
+  
+      editButton.addEventListener('click', () => {
+        const taskId = editButton.dataset.id;
+        const updatedTask = {
+          title: prompt('Enter the new title:', task.title),
+          description: prompt('Enter the new description:', task.description),
+          dueDate: prompt('Enter the new due date:', task.dueDate),
+          completed: task.completed
+        };
+        handleEditRequest(taskId, updatedTask);
+      });
+  
+      completeBtn.addEventListener('click', () => {
+        const taskId = completeBtn.dataset.id;
+        handleCompleteRequest(taskId);
+      });
   
       taskList.appendChild(taskItem);
     });

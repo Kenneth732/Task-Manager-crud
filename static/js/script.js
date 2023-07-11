@@ -77,4 +77,15 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
       .catch(error => console.error(error));
   };
   
- 
+  // Function to handle the POST request
+  const handlePostRequest = (task) => {
+    fetch('http://localhost:3000/tasksData', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(task)
+    })
+
+  };
+  

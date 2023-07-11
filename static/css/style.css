@@ -37,3 +37,17 @@ body {
     padding: 0;
   }
   
+  .task-card {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .task-card h3 {
+    margin-top: 0;
+  }
+  
+  .task-card button {
+    margin-right: 5px;
+  }
+  

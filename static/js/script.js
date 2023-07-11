@@ -26,6 +26,21 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
     // Clear any existing content
     taskList.innerHTML = '';
   
+    // Iterate over the data and generate HTML for each task
+    data.forEach(task => {
+      const taskItem = document.createElement('li');
+      taskItem.classList.add('task-card');
+      taskItem.innerHTML = `
+        <h3>${task.title}</h3>
+        <p>${task.description}</p>
+        <p>Due Date: ${task.dueDate}</p>
+        <p>Completed: ${task.completed ? 'Yes' : 'No'}</p>
+        <button class="editBtn" data-id="${task.id}">Edit</button>
+        <button class="completeBtn" data-id="${task.id}">Complete</button>
+        <button class="deleteBtn" data-id="${task.id}">Delete</button>
+      `;
+  
 
+    });
   };
   

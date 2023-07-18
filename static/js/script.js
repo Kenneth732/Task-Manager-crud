@@ -30,6 +30,7 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
     data.forEach(task => {
       const taskItem = document.createElement('li');
       taskItem.classList.add('task-card');
+        
       taskItem.innerHTML = `
         <h3>${task.title}</h3>
         <p>${task.description}</p>

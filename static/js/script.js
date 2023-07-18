@@ -146,13 +146,15 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
           body: JSON.stringify(updatedTask),
         });
       })
+        
       .then(() => {
         // Refresh the task list by re-rendering the data
         handleRenderFetch();
       })
       .catch((error) => console.error(error));
   };
-  
+
+
   // Call the handleRenderFetch function initially to display the tasks
   handleRenderFetch();
   
